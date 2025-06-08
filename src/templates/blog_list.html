@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block content %}
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="mb-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
+    <p class="text-xl text-gray-600">
+      Practical Rust backend development tutorials and insights
+    </p>
+  </div>
+
+  {% if posts %}
+  <div class="space-y-8">
+    {% for post in posts %}
+    <article
+      class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
+    >
+      {% if post.cover_image %}
+      <img
+        src="{{ post.cover_image }}"
+        alt="{{ post.title }}"
+        class="w-full h-48 object-cover"
+      />
+      {% endif %}
+
+      <div class="p-6">
+        <div class="flex items-center text-sm text-gray-500 mb-2">
+          <time datetime="{{ post.published_at }}">
+            {{ post.published_at | date("%B %d, %Y") }}
+          </time>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-3">
+          <a
+            href="/blog/{{ post.slug }}"
+            class="hover:text-orange-600 transition-colors"
+          >
+            {{ post.title }}
+          </a>
+        </h2>
+
+        <div class="flex justify-between items-center">
+          <a
+            href="/blog/{{ post.slug }}"
+            class="text-orange-600 font-medium hover:text-orange-700 transition-colors"
+          >
+            Read more →
+          </a>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  {% if total_pages > 1 %}
+  <div class="flex justify-center items-center space-x-4 mt-12">
+    {% if has_prev %}
+    <a
+      href="/blog?page={{ prev_page }}"
+      class="px-4 py-2 bg-white border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+    >
+      ← Previous
+    </a>
+    {% endif %}
+
+    <span class="text-gray-600">
+      Page {{ current_page }} of {{ total_pages }}
+    </span>
+
+    {% if has_next %}
+    <a
+      href="/blog?page={{ next_page }}"
+      class="px-4 py-2 bg-white border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+    >
+      Next →
+    </a>
+    {% endif %}
+  </div>
+  {% endif %} {% else %}
+  <div class="text-center py-12">
+    <h2 class="text-2xl font-semibold text-gray-900 mb-4">No posts yet</h2>
+    <p class="text-gray-600">Check back soon for new content!</p>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Essential Meta Tags (must come first) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Basic Meta Tags -->
+    <title>{{ title | default(value="RustStack") }}</title>
+    <meta name="description" content="{{ description | default(value="From APIs
+    to blockchains, RustStack is where Rust developers go to level up in Web2
+    and Web3.") }}" />
+    <meta name="author" content="RustStack" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="static/assets/svg/ruststack_icon_dark.svg"
+    />
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp) -->
+    <meta
+      property="og:title"
+      content="RustStack - Where Rust Developers Level Up in Web2 and Web3"
+    />
+    <meta
+      property="og:description"
+      content="From APIs to blockchains, RustStack is where Rust developers go to level up in Web2 and Web3."
+    />
+    <meta
+      property="og:image"
+      content="https://b542-2a09-bac1-5440-18-00-3df-3e.ngrok-free.app/static/assets/png/ruststack_dark_preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="RustStack - The go-to platform for Rust developers in Web2 and Web3"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://b542-2a09-bac1-5440-18-00-3df-3e.ngrok-free.app/static/assets/png/ruststack_dark_preview.png"
+    />
+    <meta property="og:url" content="https://ruststack.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RustStack" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="RustStack - Where Rust Developers Level Up in Web2 and Web3"
+    />
+    <meta
+      name="twitter:description"
+      content="From APIs to blockchains, RustStack is where Rust developers go to level up in Web2 and Web3."
+    />
+    <meta
+      name="twitter:image"
+      content="https://b542-2a09-bac1-5440-18-00-3df-3e.ngrok-free.app/static/assets/png/ruststack_dark_preview.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="RustStack - The go-to platform for Rust developers in Web2 and Web3"
+    />
+
+    <!-- Platform-specific Meta Tags -->
+    <meta property="telegram:channel" content="@ruststack" />
+
+    <!-- External Stylesheets -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- External Scripts (CSS Framework) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <style>
+      .prose code {
+        @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+      }
+      .prose pre code {
+        @apply bg-transparent p-0;
+      }
+    </style>
+
+    <!-- External Scripts (JavaScript) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </head>
+  <body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="/" class="text-xl font-bold text-gray-900"> Ruststack </a>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a
+                href="/blog"
+                class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                >Blog</a
+              >
+              <a
+                href="/contact"
+                class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+          <p class="text-gray-600">
+            &copy; 2025 ruststack. Built with Rust and ❤️
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
